@@ -42,6 +42,13 @@ h4 {
   margin: 24px 0 0;
 }
 
+.row {
+  display: flex;
+  > * {
+    flex: 1;
+  }
+}
+
 article {
   h2, h3 {
     position: relative;
@@ -437,5 +444,126 @@ a {
     bottom: 2px;
     background: #fff;
     opacity: .5;
+  }
+}
+
+//  Visual tests
+// -------------------------------------------------
+
+.visual-tests {
+  padding-top: 12px;
+  padding-bottom: 120px;
+
+  h1 {
+    color: #555;
+    font-size: 20px;
+    margin: 0;
+    padding-left: 16px;
+  }
+
+  .row {
+    border-bottom: 1px solid #eee;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+
+
+  }
+
+  article:last-child {
+    .row {
+      border: none;
+    }
+  }
+}
+
+.vt-tile {
+  padding: 16px;
+  width: 284px;
+
+  input {
+    width: 100%;
+  }
+
+  h2 {
+    font-family: monospace;
+    font-size: 14px;
+    margin: 0 0 8px;
+    text-align: center;
+  }
+}
+
+.v-log {
+  position: fixed;
+  padding: 8px;
+  font-size: 12px;
+  font-family: monospace;
+  background: rgba(0, 0, 0, .7);
+  height: 100px;
+  width: 100%;
+  bottom: 0;
+  overflow: auto;
+  z-index: 10;
+
+  p {
+    margin: 0;
+    color: greenyellow;
+  }
+
+  span {
+    color: #ddd;
+  }
+}
+
+//  Logger
+// -------------------------------------------------
+
+.logger {
+  background: rgba(0, 0, 0, .7);
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: Monospace, monospace;
+  height: 150px;
+  overflow: auto;
+  position: relative;
+}
+
+.logger--content {
+  padding: 4px 8px;
+  height: 100%;
+  overflow: auto;
+
+  p {
+    margin: 0;
+    color: greenyellow;
+  }
+
+  span {
+    color: #ddd;
+  }
+}
+
+.logger--clear {
+  color: #333;
+  border-radius: 4px 4px 0 0;
+  cursor: pointer;
+  position: absolute;
+  height: 32px;
+  padding: 0 8px;
+  font-family: 'Tahoma', sans-serif;
+  font-size: 13px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, .5);
+  right: 24px;
+  bottom: 0;
+
+  &:hover {
+    background: rgba(255, 255, 255, .8);
+  }
+
+  &:active {
+    background: rgba(255, 255, 255, .3);
   }
 }
